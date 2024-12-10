@@ -6,8 +6,11 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+set(CMSISCORE ${CMAKE_CURRENT_SOURCE_DIR}/extern/CMSIS_5/CMSIS/Core)
+
 # Initialise pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
+set(PICO_DEOPTIMIZED_DEBUG ON)
 
 # == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
 if(WIN32)
@@ -41,9 +44,17 @@ add_executable(
 )
 
 # pull in common dependencies
-target_link_libraries(hello_dsp_q16 pico_stdlib)
+target_link_libraries(hello_dsp_q16 pico_stdlib CMSISDSP)
+
+target_include_directories(
+    hello_dsp_q16
+    PRIVATE
+    ${CMSISCORE}/Include
+)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(hello_dsp_q16)
 
 # add url via pico_set_program_url
+
+add_subdirectory(extern/CMSIS_DSP)
