@@ -2,3 +2,4 @@ build
 src_py/.venv/**
 src_py/data/**
 src_py/mnist_images/**
+src_py/__pycache__/**
