@@ -10,7 +10,7 @@ set(CMSISCORE ${CMAKE_CURRENT_SOURCE_DIR}/extern/CMSIS_5/CMSIS/Core)
 
 # Initialise pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
-set(PICO_DEOPTIMIZED_DEBUG ON)
+# set(PICO_DEOPTIMIZED_DEBUG ON)
 
 # == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
 if(WIN32)
