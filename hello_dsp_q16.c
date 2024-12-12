@@ -12,8 +12,6 @@
 #include "image_data.h"
 #include "model_parameters.h"
 
-#define FAST_CMSIS_INSTRUCTION
-
 #define FC1_STATE_SIZE (1 + FC1_SIZE) *INPUT_SIZE
 #define FC2_STATE_SIZE (1 + FC2_SIZE) *FC1_SIZE
 
